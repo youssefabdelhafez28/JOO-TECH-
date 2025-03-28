@@ -1,52 +1,103 @@
+/* استيراد خط حديث */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
 body {
-    font-family: 'Arial', sans-serif;
-    text-align: center;
+    font-family: 'Cairo', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
     scroll-behavior: smooth;
 }
-.navbar {
+
+/* شريط التنقل الثابت */
+.sticky-nav {
     position: fixed;
-    top: 0;
     width: 100%;
-    background: #007bff;
-    padding: 10px;
+    top: 0;
+    left: 0;
+    background: #222;
+    color: white;
+    padding: 10px 0;
     text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
-.navbar ul {
+
+.sticky-nav ul {
     list-style: none;
     padding: 0;
 }
-.navbar ul li {
+
+.sticky-nav ul li {
     display: inline;
     margin: 0 15px;
 }
-.navbar ul li a {
+
+.sticky-nav ul li a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    transition: 0.3s;
 }
-header {
-    padding: 100px 20px;
-    background: linear-gradient(90deg, #007bff, #00d4ff);
-    color: white;
+
+.sticky-nav ul li a:hover {
+    color: #f0a500;
 }
-.portfolio-grid {
+
+/* قسم الرئيسية */
+.hero {
+    background: url('background.jpg') no-repeat center center/cover;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 10px;
-}
-.portfolio-grid img {
-    width: 30%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.contact .map {
-    margin-top: 20px;
-}
-footer {
-    padding: 10px;
-    background: #333;
+    align-items: center;
     color: white;
+    text-align: center;
+}
+
+.hero .btn {
+    background: #f0a500;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.hero .btn:hover {
+    background: #d98d00;
+}
+
+/* معرض الأعمال */
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.portfolio-item img:hover {
+    transform: scale(1.05);
+}
+
+/* زر العودة للأعلى */
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #f0a500;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#backToTop:hover {
+    background: #d98d00;
